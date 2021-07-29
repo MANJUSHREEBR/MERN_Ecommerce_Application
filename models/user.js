@@ -9,7 +9,6 @@ const userSchema = new mongoose.Schema({
     name:{
         type: String,
         trim: true,
-        default: "Manju",
         required:true,
         maxlength: 32
     },
