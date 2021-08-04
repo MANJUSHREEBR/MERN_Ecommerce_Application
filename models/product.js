@@ -3,13 +3,44 @@ const {ObjectId} = mongoose.Schema
 
 
 
-const userSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
     salt: String,
     name:{
         type: String,
         trim: true,
         required:true,
         maxlength: 32
+    },
+    description:{
+        type: String,
+        required:true,
+        maxlength: 2000
+    },
+    price:{
+        type: Number,
+        trim: true,
+        required:true,
+        maxlength: 32
+        
+    },
+    category:{
+        type: ObjectId,
+        ref: 'Category',
+         maxlength: 32,
+         required:true
+        
+    },
+    quantity:{
+            type: Number
+
+    },
+    photo:{
+        data: Buffer,
+        contentType: String
+    },
+    shipping:{
+        required: false,
+        type: Boolean
     }
    
 },
@@ -18,4 +49,4 @@ const userSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Product", productSchema);
