@@ -10,6 +10,7 @@ const productRoutes = require('./routes/product');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const expressValidator = require('express-validator');
 
 //db connection
@@ -30,6 +31,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(expressValidator());
+app.use(cors());
 //routes middleware
 
 
