@@ -12,6 +12,7 @@ router.put("/category/:categoryId/:userId",requireSignin, isAuth, isAdmin, updat
 router.delete("/category/:categoryId/:userId",requireSignin, isAuth, isAdmin, remove);
 router.get("/categories",list);
 
+
 router.param('categoryId', categoryById);
 router.param('userId', userById);
 
